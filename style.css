@@ -4,7 +4,11 @@ body {
 }
 
 a {
-  color: #ce5402;
+  color: #662eed;
+}
+a:hover {
+  cursor: pointer;
+  color: #ff5900;
 }
 
 .weather-app {
@@ -33,12 +37,18 @@ header {
 .search-button {
   margin-left: 5px;
   font-size: 16px;
-  background-color: #ce5402;
+  font-weight: bolder;
+  background-color: #662eed;
   color: white;
   border: none;
   padding: 20px;
   line-height: 1;
   border-radius: 5px;
+}
+.search-button:hover {
+  cursor: pointer;
+  font-weight: bolder;
+  background: #ff5900;
 }
 main {
   padding: 30px 0;
@@ -54,11 +64,13 @@ main {
 }
 
 .current-city {
+  color: rgb(29, 17, 55);
   font-size: 38px;
   font-weight: 900;
   margin: 0;
 }
 .current-country {
+  color: rgb(29, 17, 55);
   font-size: 32px;
   font-weight: 600;
   margin: 0;
@@ -71,7 +83,7 @@ main {
 }
 
 .current-details strong {
-  color: #f65282;
+  color: #ff822d;
 }
 
 .current-temperature-icon {
@@ -82,6 +94,7 @@ main {
 }
 
 .current-temperature-value {
+  color: rgb(29, 17, 55);
   font-size: 80px;
   font-weight: bold;
 }
