@@ -28,7 +28,6 @@ let todaysDate = new Date();
 
 currentDate.innerHTML = formatDate(todaysDate);
 
-
 // Show the temperature
 
 function displayTemperature(response) {
