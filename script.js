@@ -58,3 +58,21 @@ function displayTemperature(response) {
   let windElement = document.querySelector("#wind");
   windElement.innerHTML = `${wind}km/h`;
 }
+
+// Show city
+
+function search(event) {
+  event.preventDefault();
+
+  let searchInputElement = document.querySelector("#search-input");
+  let city = `${searchInputElement.value},`;
+
+  let key = "b30a2d9fef22b5o0t83182be74814ec8";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${key}&=metric`;
+
+  axios.get(apiUrl).then(displayTemperature);
+}
+
+let form = document.querySelector("#search-form");
+console.log("form");
+form.addEventListener("submit", search);
