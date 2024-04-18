@@ -27,3 +27,34 @@ let currentDate = document.querySelector("#current-date");
 let todaysDate = new Date();
 
 currentDate.innerHTML = formatDate(todaysDate);
+
+
+// Show the temperature
+
+function displayTemperature(response) {
+  let temperatureElement = document.querySelector("#current-temperature");
+  console.log(response);
+  let temperature = response.data.temperature.current;
+  temperatureElement.innerHTML = Math.round(temperature);
+
+  let cityElement = document.querySelector(".current-city");
+  let city = response.data.city;
+  cityElement.innerHTML = `${city},`;
+
+  let country = response.data.country;
+  let countryElement = document.querySelector("#current-country");
+  countryElement.innerHTML = country;
+
+  let description = response.data.condition.description;
+  let humidity = response.data.temperature.humidity;
+  let wind = response.data.wind.speed;
+
+  let descriptionDetails = document.querySelector("#description-details");
+  descriptionDetails.innerHTML = description;
+
+  let humidityElement = document.querySelector("#humidity");
+  humidityElement.innerHTML = `${humidity}%`;
+
+  let windElement = document.querySelector("#wind");
+  windElement.innerHTML = `${wind}km/h`;
+}
