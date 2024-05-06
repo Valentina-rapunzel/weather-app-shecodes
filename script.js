@@ -25,7 +25,6 @@ function formatDate(now) {
 
 let currentDate = document.querySelector("#current-date");
 let todaysDate = new Date();
-
 currentDate.innerHTML = formatDate(todaysDate);
 
 // Show the temperature
