@@ -30,8 +30,15 @@ currentDate.innerHTML = formatDate(todaysDate);
 // Show the temperature
 
 function displayTemperature(response) {
-  let temperatureElement = document.querySelector("#current-temperature");
+  
+  // Injected an icon 
+  let iconElement = document.querySelector("#current-temperature-icon");
+  let icon = `<img src="${response.data.condition.icon_url}" class="current-temperature-icon" alt="current-temperature-icon"/>`;
+  iconElement.innerHTML = `${icon}`;
+
+  let temperatureElement = document.querySelector("#current-temperature-value");
   console.log(response);
+  console.log(response.data);
   let temperature = response.data.temperature.current;
   temperatureElement.innerHTML = Math.round(temperature);
 
